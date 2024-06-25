@@ -2,9 +2,10 @@ import logging
 import os
 
 from dotenv import load_dotenv
-from telegram.ext import CommandHandler, Updater
+from telegram.ext import CommandHandler, InlineQueryHandler, Updater
 
-from commands import how_nit_picker
+from commands import how_nitpicker, start
+from inline_queries import inlinequery
 
 load_dotenv()
 
@@ -21,7 +22,11 @@ def main() -> None:
 
     dispatcher = updater.dispatcher
 
-    dispatcher.add_handler(CommandHandler("hownitpicker", how_nit_picker))
+    dispatcher.add_handler(CommandHandler("start", start))
+
+    dispatcher.add_handler(CommandHandler("hownitpicker", how_nitpicker))
+
+    dispatcher.add_handler(InlineQueryHandler(inlinequery))
 
     updater.start_polling()
 
