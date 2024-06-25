@@ -204,4 +204,15 @@ pip-selfcheck.json
 .history
 .ionide
 
+### Trunk ###
+*out
+*logs
+*actions
+*notifications
+*tools
+plugins
+user_trunk.yaml
+user.yaml
+tmp
+
 # End of https://www.toptal.com/developers/gitignore/api/python,virtualenv,visualstudiocode
