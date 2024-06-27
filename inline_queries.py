@@ -18,13 +18,7 @@ def inlinequery(update: Update, context: CallbackContext) -> None:
     percentage = secrets.randbelow(101)
     response = f"{user}, ты душнила на {percentage}% ! 💨"
     keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    "Share you nitpickness 💨", switch_inline_query=""
-                )
-            ]
-        ]
+        [[InlineKeyboardButton("Share you nitpickness 💨", switch_inline_query="")]]
     )
 
     results = [
@@ -40,4 +34,4 @@ def inlinequery(update: Update, context: CallbackContext) -> None:
         )
     ]
 
-    update.inline_query.answer(results)
+    update.inline_query.answer(results, cache_time=0)

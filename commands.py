@@ -17,13 +17,7 @@ def how_nitpicker(update: Update, context: CallbackContext) -> None:
     response = f"{user}, ты душнила на {percentage}% ! 💨"
 
     keyboard = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    "Share you nitpickness 💨", switch_inline_query="hownitpicker"
-                )
-            ]
-        ]
+        [[InlineKeyboardButton("Share you nitpickness 💨", switch_inline_query="")]]
     )
 
     update.message.reply_text(response, reply_markup=keyboard)
